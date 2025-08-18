@@ -55,6 +55,11 @@ public class VectorMaxer {
         return res;
     }
     public static void main(String[] args) {
+
+        System.out.println();
+        System.out.println("------- Normal -------");
+        System.out.println();
+
         long[] vet32 = geraVetor(16, 16);
         long st = System.nanoTime();
         maxVal1(vet32, 32);
@@ -88,6 +93,8 @@ public class VectorMaxer {
 
         // DIVIDE E CONQUISTA
         System.out.println();
+        System.out.println("------- Divisao e Conquista -------");
+        System.out.println();
         counter = 0;
         long[] vet32CEC = geraVetor(16, 16);
         st = System.nanoTime();
@@ -115,7 +122,7 @@ public class VectorMaxer {
         counter = 0;
         long[] vetSIMCEC = geraVetor(Integer.MAX_VALUE/20, Integer.MAX_VALUE/20);
         st = System.nanoTime();
-        maxVal2(vetSIM, 0, ((Integer.MAX_VALUE/20)*2)-1);
+        maxVal2(vetSIMCEC, 0, ((Integer.MAX_VALUE/20)*2)-1);
         end = System.nanoTime();
         System.out.printf("Número de operacoes %d%n",counter);
         System.out.printf("Tempo levado %d microS%n",(end-st)/1000);
